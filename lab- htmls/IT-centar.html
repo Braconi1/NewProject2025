@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ž, initial-scale=1.0">
+    <title>IT Center Ticket</title>
+</head>
+<body>
+    <form method="post" action="#">
+
+        <h1>IT Center Ticket Post</h1>
+
+        <label for="problem">Please select you problem</label>
+
+        <select name="Problem" id="problem" required>
+            <option value="" disabled selected>Type of problem</option>
+            <option value="CV">Cv problem</option>
+            <option value="bug">Bug</option>
+            <option value="crash">Page crash</option>
+            <option value="lost">Lost information</option>
+            <option value="hacked">Hacked & attacked</option>
+        </select> 
+    </form>
+
+    <!--Form Photos-->
+
+    <!--Form Photos-->
+
+    <form action="/upload" method="post" enctype="multipart/form-data" aria-required="true">
+        <label for="image">Select image: </label>
+        <input type="file" name="images" accept="images/*">
+        <br><br>
+        <input type="submit"  id="submit" name="Submit Ticket">
+    </form>
+</body>
+</html>

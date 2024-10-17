@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+</head>
+<body>
+    <h1>FeedBack Form</h1>
+    <!--Form-->
+
+    <form method="post" action="#">
+
+        <label for="Username">Username:</label>
+        <input type="text" name="username" id="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea name="feedback" id="feedback" rows="5" cols="40" placeholder="Enter your feedback here..." required></textarea><br><br>
+
+        <label for="source">How did you hear about the CV Creator Tool?</label>
+
+        <select name="source" id="source" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="facebook">Facebook</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="instagram">Instagram</option>
+            <option value="tiktok">TikTok</option>
+            <option value="others">Others</option>
+        </select><br><br>
+
+        <label for="newsletter">Sign up for the newsletter:</label>
+        <input type="checkbox" name="newsletter" id="newsletter"><br><br>
+
+        
+        <label>Would you want to use the CV Creator Tool again?</label><br>
+
+        <input type="radio" name="use_again" id="yes" value="yes" checked>
+        <label for="yes">Yes</label><br>
+
+        <input type="radio" name="use_again" id="no" value="no">
+    	<label for="no">No</label><br>
+
+        <input type="radio" name="use_again" id="maybe" value="maybe">
+        <label for="maybe">Maybe</label><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit FeedBack">
+        <input type="reset" value="Reset all Form">
+
+
+    </form>
+</body>
+</html>
