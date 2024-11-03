@@ -41,9 +41,10 @@
   padding: 0;
 }
 
-html {
+html, body {
   font-size: 12pt;
   font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+  overflow-x: hidden;
 }
 
 nav {
@@ -109,7 +110,7 @@ nav svg {
   flex-wrap: wrap;
   width: 100%;
   max-width: var(--site-max-width); 
-  padding: 0 20px; 
+  padding: 0 10px;
 }
 
 .hero-section .content-details {
@@ -211,6 +212,7 @@ nav svg {
   height: 400px;
   object-fit: cover;
   border-radius: var(--border-radius-circle);
+  margin-left: 10%;
 }
 
 .about-section .about-details{
@@ -226,6 +228,7 @@ nav svg {
   margin: 50px 0 30px;
   text-align: center;
   font-size: var(--font-size-m);
+  margin-right: 15%;
 }
 
 .about-section .social-link-list {
@@ -242,6 +245,78 @@ nav svg {
 
 .about-section .social-link-list .social-link:hover {
   color: var(--accent-color);
+}
+
+/* FAQ */
+
+.faq-section {
+  max-width: 75%;
+  margin: auto;
+}
+
+.faq-section p,
+.faq-section h3 {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.faq-section h1 {
+  letter-spacing: 3px;
+}
+
+.accordion {
+  background-color: var(--color-white);
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion i {
+  font-size: var(--font-size-m);
+}
+
+
+.faq-toggle {
+  display: none;
+}
+
+.accordion, .pannel {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  box-sizing: border-box; 
+  background-color: var(--color-white);
+}
+
+.pannel {
+  display: none;
+  padding: 2rem 2.5rem;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+
+.faq-toggle:checked + .accordion + .pannel {
+  display: block;
+}
+
+.pannel p {
+  color: var(--primary-color);
+  font-size: var(--font-size-m);
+  line-height: 1.4;
+}
+
+.faq {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
 }
 
 /* Footer */
