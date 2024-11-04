@@ -120,7 +120,7 @@ nav svg {
 
 .hero-section .content-details .title {
   font-size: var(--font-size-xxl);
-  color: var(--color-text);
+  color: pink;
   font-family: "Papyrus", sans-serif;
 }
 
@@ -247,11 +247,52 @@ nav svg {
   color: var(--accent-color);
 }
 
+
+/* Picture-Perfume */
+
+.text-picture h1 {
+  text-align: center;
+  font-size: var(--font-size-m); 
+  color: #333;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.pictures-show {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  color: #434343;
+}
+
+.pictures-show div {
+  text-align: center;
+  flex: 1 1 150px;
+  max-width: 200px;
+}
+
+.pictures-show img {
+  width: 100%;
+  max-width: 150px; 
+  height: auto;
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 10px;
+}
+
+.pictures-show h4 {
+  font-size: 1rem;
+  color: #333; 
+}
+
 /* FAQ */
 
 .faq-section {
   max-width: 75%;
   margin: auto;
+  color: #434343;
 }
 
 .faq-section p,
@@ -397,6 +438,63 @@ footer .wrapper {
   list-style: none;
 }
 
+/* Customers FeedBack */
+
+.testimonials {
+  padding: 40px 0;
+  background-color: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border {
+  width: 160px;
+  height: 5px;
+  background: var(--color-text);
+  margin: 26px auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.testimonial {
+  background: var(--color-white);
+  padding: 30px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: var(--font-size-l);
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.stars {
+  color: #6a3093;
+  margin-bottom: 20px;
+}
 
 @media(max-width: 450px) {
   .links-container{
@@ -453,6 +551,14 @@ footer .wrapper {
     margin: 30px 0 20px;
   }
 
+  .pictures-show {
+    gap: 10px; 
+  }
+
+  .pictures-show h4 {
+    font-size: 0.9rem;
+  }
+
   .social-link-list {
     gap: 15px;
   }
@@ -468,6 +574,11 @@ footer .wrapper {
   .footer-widget .desc,
   .footer-widget .links li a {
     font-size: 85%;
+  }
+
+  .col {
+    flex: 100%;
+    max-width: 80%;
   }
 }
 
@@ -535,5 +646,10 @@ footer .wrapper {
 
   .footer-widget .logo {
     max-width: 30%; 
+  }
+
+  .col {
+    flex: 100%;
+    max-width: 80%;
   }
 }
