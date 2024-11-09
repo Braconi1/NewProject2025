@@ -90,6 +90,10 @@
   .open-sidebar-button, .close-sidebar-button {
     display: none;
   }
+
+  .bg-pink {
+    color: #B24592;
+  }
   
   @media(max-width: 450px) {
     .links-container{
