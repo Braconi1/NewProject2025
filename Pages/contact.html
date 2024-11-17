@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
     <title>Contact Form</title>
-    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="icon" type="image/png" href="/images/R.png">
     <link href="/css/contact.css" rel="stylesheet">
   </head>
   <body>
@@ -32,9 +32,8 @@
     
                 <a class="home-link" href="/Pages/home.html">💫 Perfume Store</a>
                 <a href="/Pages/home.html">Home</a>
-                <a href="/Pages/about.html">About</a>
                 <a href="/Pages/products.html">Discover</a>
-                <a href="/Pages/login.html">Login</a>
+                <a href="/Pages/signup.html">Login</a>
                 <a href="/Pages/contact.html">Contact & Support</a>
             </div>
         </nav>
@@ -105,6 +104,16 @@
                 </div>
             </div>
         </div>
+
+         <!--GeLocation API-->
+
+        <div class="api-container">
+            <h1>Geolocation API</h1>
+            <img class="image-api" src="/images/earth.png" alt="Location">
+            <p>Click the button to get your coordinates.</p>
+            <button onclick="getLocation()">Try It</button>
+            <p id="demo"></p>
+        </div>
     </main>
 
     <footer>
@@ -156,7 +165,7 @@
                     <h6>Help &amp; Support</h6>
                     <ul class="links">
                         <li><a href="#">Support Center</a></li>
-                        <li><a href="#">Live chat</a></li>
+                        <li><a href="mailto:amela.vatres@stu.ibu.edu.ba?subject=Your Subject Here&body=Your email content here">Send Email</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>
                     </ul>
@@ -170,6 +179,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="/java/gelocation.js"></script>
     
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/signup.css">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/images/R.png">
 </head>
 <body>
     <main>
         <div class="container">
             <div class="form-box">
                 <h1>Sign Up</h1>
-                <form>
+                <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+
                     <div class="input-group">
                         <div class="input-field">
                                <i class="fa-solid fa-user"></i>
@@ -28,12 +30,49 @@
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" placeholder="Password" required> 
                         </div>
-                        <p>Forgot password? <a href="signup.html">Reset here!</a></p>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-calendar"></i>
+                            <input type="date" name="dob" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-venus-mars"></i>
+                            <select name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <textarea name="address" placeholder="Address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-upload"></i>
+                            <input type="file" name="Picture" accept="image/*">
+                        </div>
+
+                        <div class="input-field">
+                            <input type="checkbox" name="terms" required>
+                            <label for="terms"> I agree to the terms and conditions</label>
+                        </div>
+
+                        </div>
                     </div>
+                    
                     <div class="btn-field">
-                        <button type="button" onclick="window.location.href='signup.html';">Sign Up</button>
-                        <button type="button" onclick="window.location.href='home.html';">Sign in</button>
+                        <button type="submit">Submit</button>
                     </div>
+
                 </form>
             </div>
         </div>

@@ -134,7 +134,77 @@ nav svg {
 
 .container {
     flex: 1;
-  }
+}
+/* TABELA */
+.table-container {
+  width: 90%;
+  max-width: 1200px;
+  overflow-x: auto;
+  padding: 20px;
+  margin: auto;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+th {
+  padding: 15px;
+  text-align: center;
+  background: #6a3093;
+  color: var(--color-white);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+
+td:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; 
+  background-color: #f0f0f0; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+
+.video-player {
+  width: 80%; 
+  max-width: var(--site-max-width); 
+  height: auto; 
+  border: 5px solid #333; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
   
   footer {
     background-color: #2d2d2d;
@@ -210,18 +280,98 @@ nav svg {
   }
 
 @media(max-width: 450px) {
-    footer {
-        padding: 4% 0;
-      }
+  .links-container{
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+
+  .open-sidebar-button, .close-sidebar-button {
+    padding: 20px;
+    display: block;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+
+  #sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  footer {
+    padding: 4% 0;
+  }
     
-      .footer-widget h6 {
-        font-size: 100%;
-      }
+  .footer-widget h6 {
+    font-size: 100%;
+  }
     
-      .footer-widget .desc,
-      .footer-widget .links li a {
-        font-size: 85%;
-      }
+  .footer-widget .desc,
+  .footer-widget .links li a {
+    font-size: 85%;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  th, td {
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+
+  th {
+    background-color: #6a3093;
+    color: #fff;
+    padding: 10px;
+  }
+
+  td {
+    padding-left: 10px;
+    padding-top: 5px;
+    border: none;
+  }
+
+  .video-player {
+    width: 100%; 
+    border: 2px solid #555; 
+    border-radius: 5px; 
+  }
+
+  .video-container {
+    padding: 10px; 
+  }
 }
 
 /* Mobiteli */
@@ -245,9 +395,21 @@ nav svg {
     .footer-widget .logo {
       max-width: 30%; 
     }
+
+    .video-player {
+      width: 90%; 
+      border: 3px solid #444; 
+    }
   
     .col {
       flex: 100%;
       max-width: 80%;
+    }
+    table {
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px;
     }
 }
