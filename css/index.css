@@ -217,7 +217,7 @@ body.dark .hero-section {
   background: none;
   border: none;
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: var(--font-size-l);
   cursor: pointer;
 }
 
@@ -567,6 +567,10 @@ footer .wrapper {
 
 .footer-widget .socials li {
   list-style: none;
+}
+
+body.dark footer {
+  background-color: var(--color-1);
 }
 
 /* Customers FeedBack */
