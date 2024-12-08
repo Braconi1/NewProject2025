@@ -6,6 +6,20 @@
   --primary-color: #6a3093;
   --color-white: #f0f0f0;
   --color-text: #B24592;
+  --hero-background-light: #ffffff; 
+  --hero-background-dark: #333;
+  --about-background-light: #ffffff; 
+  --about-background-dark: #333;
+  --text-picture-background-light: #ffffff; 
+  --text-picture-background-dark: #333; 
+  --pictures-show-background-light: #ffffff; 
+  --pictures-show-background-dark: #333;
+  --testimonials-background-light: #ffffff; 
+  --testimonials-background-dark: #474747; 
+  --faq-background-light: #ffffff; 
+  --faq-background-dark: #333333; 
+  --accordion-background-light: #ffffff; 
+  --accordion-background-dark: #444444;
 
   /* Fonts */
 
@@ -36,9 +50,25 @@
 
 }
 
+/* Theme-Switcher boje */
+body.light {
+  --background-color: #6a3093;
+  --text-color: #fff;
+  --accent-color: #006aff;
+  --primary-color: #6a3093;
+}
+
+body.dark {
+  --background-color: #333;
+  --text-color: #f0f0f0;
+  --accent-color: #ff6600;
+  --primary-color: #333;
+}
+
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 }
 
 html, body {
@@ -55,6 +85,10 @@ nav {
   align-items: center;
 }
 
+a, button {
+  color: var(--accent-color);
+  text-decoration: none;
+}
 
 .links-container {
   height: 100%;
@@ -95,10 +129,17 @@ nav svg {
 
 .hero-section {
   min-height: 100vh;
-  background-color: var(--primary-color); 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease;
+}
+
+body.dark .hero-section {
+  background-color: var(--hero-background-dark);
+  color: var(--text-color-dark); 
 }
 
 .hero-section .section-content {
@@ -171,12 +212,33 @@ nav svg {
   justify-content: center;
 }
 
+/* theme test */
+.theme-switcher {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.theme-switcher:focus {
+  outline: none;
+}
+
 /* About us */
 
 .about-section {
   padding: 100px 0;
-  background: var(--color-white);
+  background-color: var(--about-background-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease;
 }
+
+body.dark .about-section {
+  background-color: #796878;
+  color: var(--text-color-dark);
+}
+
 
 .section-title {
   text-align: center;
@@ -188,6 +250,10 @@ nav svg {
   max-width: var(--font-size-xl);
   margin-left: 20%;
   color: #B24592;
+}
+
+body.dark .section-title {
+  color: #f3a4b5;
 }
 
 .section-title::after {
@@ -231,6 +297,10 @@ nav svg {
   margin-right: 15%;
 }
 
+body.dark .about-section .about-details .text {
+  color: var(--color-white);
+}
+
 .about-section .social-link-list {
   display: flex;
   gap: 25px;
@@ -250,12 +320,38 @@ nav svg {
 
 /* Picture-Perfume */
 
+.text-picture {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  height: 200px;             
+  position: relative;
+  background-color: var(--text-picture-background-light); 
+  color: var(--text-color-light); 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+body.dark .text-picture {
+  background-color: var(--text-picture-background-dark); 
+  color: var(--text-color-dark);
+}
+
+.empty-space {
+  flex-grow: 1;  
+}
+
 .text-picture h1 {
-  text-align: center;
-  font-size: var(--font-size-m); 
-  color: #333;
-  margin: 20px 0;
+  margin: 0; 
+  text-align: center; 
+  font-size: var(--font-size-m);
+  color: inherit; 
   font-family: Arial, sans-serif;
+  transition: color 0.3s ease; 
+}
+
+
+body.dark .text-picture h1 {
+  color: var(--color-white); 
 }
 
 .pictures-show {
@@ -264,7 +360,14 @@ nav svg {
   gap: 20px;
   flex-wrap: wrap;
   padding: 20px;
-  color: #434343;
+  background-color: var(--pictures-show-background-light);
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .pictures-show {
+  background-color: var(--pictures-show-background-dark);
+  color: var(--color-white);
 }
 
 .pictures-show div {
@@ -287,12 +390,38 @@ nav svg {
   color: #333; 
 }
 
+body.dark .pictures-show h4 {
+  color: var(--about-background-light); 
+}
+
 /* FAQ */
 
 .faq-section {
   max-width: 75%;
   margin: auto;
   color: #434343;
+  background-color: var(--faq-background-light); 
+  transition: background-color 0.3s ease; 
+}
+
+body.dark {
+  background-color: #333;
+}
+
+body.dark .faq-section {
+  background-color: var(--faq-background-dark);
+}
+
+body.dark .faq-section p {
+  color: var(--color-white);
+}
+
+body.dark .faq-section h3 {
+  color: var(--color-white);
+}
+
+body.dark .pannel p {
+  color: #333;
 }
 
 .faq-section p,
@@ -334,7 +463,9 @@ nav svg {
   width: 100%;
   padding: 2rem 2.5rem;
   box-sizing: border-box; 
-  background-color: var(--color-white);
+  background-color: var(--accordion-background-light); 
+  color: var(--text-color-dark); 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .pannel {
@@ -442,9 +573,15 @@ footer .wrapper {
 
 .testimonials {
   padding: 40px 0;
-  background-color: #f1f1f1;
-  color: #434343;
   text-align: center;
+  background-color: var(--testimonials-background-light);
+  color: var(--text-color-light); 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .testimonials {
+  background-color: var(--testimonials-background-dark); 
+  color: var(--text-color-dark); 
 }
 
 .inner {
@@ -452,6 +589,10 @@ footer .wrapper {
   margin: auto;
   overflow: hidden;
   padding: 0 20px;
+}
+
+body.dark .inner h1 {
+  color: var(--color-white);
 }
 
 .border {
