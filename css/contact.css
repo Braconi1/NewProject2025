@@ -5,6 +5,10 @@
     --primary-color: #6a3093;
     --color-white: #f0f0f0;
     --color-text: #B24592;
+    --hero-background-light: #ffffff; 
+    --hero-background-dark: #333;
+    --about-background-light: #ffffff; 
+    --about-background-dark: #333;
   
     /* Fonts */
   
@@ -35,10 +39,25 @@
   
 }
   
-  * {
-    margin: 0;
-    padding: 0;
-  }
+body.light {
+  --background-color: #6a3093;
+  --text-color: #fff;
+  --accent-color: #006aff;
+  --primary-color: #6a3093;
+}
+
+body.dark {
+  --background-color: #333;
+  --text-color: #f0f0f0;
+  --accent-color: #ff6600;
+  --primary-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
   
   html {
     font-size: 12pt;
@@ -53,6 +72,9 @@
     align-items: center;
   }
   
+  body.dark nav {
+    background-color: var(--color-1);
+  }
   
   .links-container {
     height: 100%;
@@ -89,6 +111,27 @@
   
   .open-sidebar-button, .close-sidebar-button {
     display: none;
+  }
+
+  .theme-switcher {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  
+  .theme-switcher i {
+    font-size: var(--font-size-l); 
+  }
+  
+  .theme-switcher:focus {
+    outline: none;
+  }
+
+  body.dark {
+    background-color: var(--about-background-dark);
   }
 
   .api-container {
@@ -140,6 +183,10 @@ button:hover {
   margin-bottom: 20px;
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark footer {
+  background-color: var(--color-1);
 }
   
   @media(max-width: 450px) {

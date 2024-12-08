@@ -15,6 +15,11 @@
     <!--NAVBAR-->
     <header>
         <nav>
+            <!--THEME-SWITCHER-->
+            <button onclick="toggleTheme()" class="theme-switcher">
+                <i class="bi bi-moon"></i> 
+            </button>
+
             <input type="checkbox" id="sidebar-active">
             <label for="sidebar-active" class="open-sidebar-button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -91,7 +96,9 @@
         <!--Pictures-->
 
         <div class="text-picture">
+            <div class="empty-space"></div>
             <h1>Our Brands</h1>
+            <div class="empty-space"></div>
         </div>
 
         <div class="pictures-show">
@@ -245,7 +252,7 @@
                     </p>
                 </div>
             </div>
-        </div>        
+        </div>      
     </main>
 
     <footer>
@@ -312,6 +319,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="/java/Theme-Swither.js"></script>
 
     <!--CONTENT-->
     

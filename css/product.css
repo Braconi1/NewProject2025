@@ -6,6 +6,10 @@
     --primary-color: #6a3093;
     --color-white: #f0f0f0;
     --color-text: #B24592;
+    --hero-background-light: #ffffff; 
+    --hero-background-dark: #333;
+    --about-background-light: #ffffff; 
+    --about-background-dark: #333;
   
     /* Fonts */
   
@@ -36,15 +40,34 @@
   
 }
 
-*{
-    margin: 0;
-    padding: 0;
+body.light {
+  --background-color: #6a3093;
+  --text-color: #fff;
+  --accent-color: #006aff;
+  --primary-color: #6a3093;
+}
+
+body.dark {
+  --background-color: #333;
+  --text-color: #f0f0f0;
+  --accent-color: #ff6600;
+  --primary-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
 html, body {
     font-size: 12pt;
     font-family: Poppins, Segoe UI, Tahoma, sans-serif;
     overflow-x: hidden;
+}
+
+body.dark {
+  background-color: var(--about-background-dark);
 }
   
 nav {
@@ -54,8 +77,8 @@ nav {
     justify-content: flex-end;
     align-items: center;
 }
-  
-  
+
+
 .links-container {
     height: 100%;
     width: 100%;
@@ -63,6 +86,10 @@ nav {
     flex-direction: row;  
     align-items: center;
     padding-top: 10px;
+}
+
+body.dark nav {
+  background-color: #0f1016;
 }
   
 nav a{
@@ -135,6 +162,23 @@ nav svg {
 .container {
     flex: 1;
 }
+
+.theme-switcher {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: var(--font-size-l);
+  cursor: pointer;
+}
+
+
+.theme-switcher i {
+  font-size: var(--font-size-l); 
+}
+
+.theme-switcher:focus {
+  outline: none;
+}
 /* TABELA */
 .table-container {
   width: 90%;
@@ -144,6 +188,25 @@ nav svg {
   margin: auto;
 }
 
+body.dark .text-picture h1 {
+  color: var(--color-white);
+}
+
+body.dark .image-1 h4 {
+  color: var(--color-white);
+}
+
+body.dark .image-2 h4 {
+  color: var(--color-white);
+}
+
+body.dark .image-3 h4 {
+  color: var(--color-white);
+}
+
+body.dark .image-4 h4 {
+  color: var(--color-white);
+}
 
 table {
   width: 100%;
@@ -195,6 +258,9 @@ td:hover {
   box-sizing: border-box; 
 }
 
+body.dark .video-container {
+  background-color: var(--about-background-dark);
+}
 
 .video-player {
   width: 80%; 
@@ -213,6 +279,10 @@ td:hover {
     font-size: 90%;
     width: 100%;
     margin-top: auto;
+  }
+
+  body.dark footer {
+    background-color: var(--color-1);
   }
   
   footer .container {
