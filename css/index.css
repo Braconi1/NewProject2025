@@ -21,6 +21,11 @@
   --accordion-background-light: #ffffff; 
   --accordion-background-dark: #444444;
 
+  /* Theme-swithcer css */
+  --text-color: #fff;  
+  --font-size-l: 20px;
+  --color-toggle-sun: #fd76ff;
+
   /* Fonts */
 
   --font-size-s: 0.9rem;
@@ -225,6 +230,20 @@ body.dark .hero-section {
   outline: none;
 }
 
+.theme-switcher:focus {
+  outline: none;
+}
+
+.theme-switcher i {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.theme-switcher:hover {
+  color: var(--color-toggle-sun);
+}
+
+
 /* About us */
 
 .about-section {
@@ -397,98 +416,91 @@ body.dark .pictures-show h4 {
 /* FAQ */
 
 .faq-section {
-  max-width: 75%;
-  margin: auto;
-  color: #434343;
-  background-color: var(--faq-background-light); 
-  transition: background-color 0.3s ease; 
-}
-
-body.dark {
-  background-color: #333;
+  min-height: auto;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10%;
+  margin: 0 auto;
 }
 
 body.dark .faq-section {
   background-color: var(--faq-background-dark);
 }
 
-body.dark .faq-section p {
+body.dark {
+  background-color: #333;
+}
+
+body.dark .faq-section h1{
   color: var(--color-white);
 }
 
-body.dark .faq-section h3 {
+body.dark .quest p{
   color: var(--color-white);
 }
 
-body.dark .pannel p {
-  color: #333;
+body.dark .ans p{
+  color: var(--color-white);
 }
 
-.faq-section p,
-.faq-section h3 {
-  margin: 1.5rem 0;
-  text-align: center;
-}
-
-.faq-section h1 {
-  letter-spacing: 3px;
-}
-
-.accordion {
-  background-color: var(--color-white);
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  font-size: var(--font-size-s);
-  width: 100%;
-  padding: 2rem 2.5rem;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+h1 {
+  font-size: 50px;
   font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--background-color);
 }
 
-.accordion i {
-  font-size: var(--font-size-m);
+.quest{
+  background-color: #2D2D2D;
+  padding: 30px;
+  font-size: 30px;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 
-
-.faq-toggle {
-  display: none;
+.quest:hover{
+  background-color: #5a5a5a;
 }
 
-.accordion, .pannel {
+.ans{
+  max-height: 0px;
   width: 100%;
-  padding: 2rem 2.5rem;
-  box-sizing: border-box; 
-  background-color: var(--accordion-background-light); 
-  color: var(--text-color-dark); 
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.pannel {
-  display: none;
-  padding: 2rem 2.5rem;
-  background-color: var(--color-white);
   overflow: hidden;
+  transition: max-height .3s ease-in-out;
 }
 
-
-.faq-toggle:checked + .accordion + .pannel {
-  display: block;
+.faq i {
+  transition: all .3s ease-in-out;
 }
 
-.pannel p {
-  color: var(--primary-color);
-  font-size: var(--font-size-m);
-  line-height: 1.4;
+.faq.active i{
+  transform: rotate(45deg);
 }
 
-.faq {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 10px 0;
+.faq.active .ans{
+  max-height: 300px;
+}
+
+.faq-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ans p{
+  background-color: #2D2D2D;
+  padding: 30px;
+  font-size: 30px;
+  border-top: 1px solid var(--color-1);
 }
 
 /* Footer */
@@ -725,6 +737,29 @@ body.dark .inner h1 {
     flex: 100%;
     max-width: 80%;
   }
+
+  .faq-section {
+    padding: 5%; 
+  }
+
+  h1 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+  }
+
+  .quest {
+    padding: 20px; 
+    font-size: 18px; 
+  }
+
+  .ans p {
+    font-size: 18px; 
+    padding: 20px; 
+  }
+
+  .faq-list {
+    gap: 5px; 
+  }
 }
 
 /* Mobiteli */
@@ -767,6 +802,29 @@ body.dark .inner h1 {
 
   .about-section .about-details {
     max-width: 90%;
+  }
+
+  .faq-section {
+    padding: 8%;
+  }
+
+  h1 {
+    font-size: 30px; 
+    margin-bottom: 15px; 
+  }
+
+  .quest {
+    padding: 25px; 
+    font-size: 24px; 
+  }
+
+  .ans p {
+    font-size: 24px; 
+    padding: 25px; 
+  }
+
+  .faq-list {
+    gap: 8px; 
   }
 
   .section-title {

@@ -15,7 +15,8 @@
         <nav>
             <!--THEME-SWITCHER-->
             <button onclick="toggleTheme()" class="theme-switcher">
-                <i class="bi bi-moon"></i> 
+                <i class="bi bi-moon" id="moon-icon"></i> 
+                <i class="bi bi-sun" id="sun-icon" style="display:none;"></i>
             </button>
 
             <input type="checkbox" id="sidebar-active">
@@ -238,6 +239,27 @@
                 </tbody>
             </table>
         </div>
+
+        <!--Interactive-Gallery-->
+
+        <h1 class="gallery-title">Gallery</h1>
+
+        <div class="gallery">
+            <img src="/images/armani code.jpg" class="thumbnail" alt="Image 1">
+            <img src="/images/eros.jpg" class="thumbnail" alt="Image 2">
+            <img src="/images/mancera.jpg" class="thumbnail" alt="Image 3">
+            <img src="/images/jpg man le bau.jpg" class="thumbnail" alt="Image 4">
+            <img src="/images/jazz.jpg" class="thumbnail" alt="Image 5">
+            <img src="/images/jean-paul.jpg" class="thumbnail" alt="Image 6">
+            <img src="/images/jpg women 2.jpg" class="thumbnail" alt="Image 7">
+            <img src="/images/jpg women 3.jpg" class="thumbnail" alt="Image 8">
+            <img src="/images/angel share.jpg" class="thumbnail" alt="Image 9">
+        </div>
+    
+        <div class="modal" id="imageModal">
+            <span class="close" id="closeBtn">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
     </main>
 
     <footer>
@@ -306,6 +328,7 @@
     </footer>
 
     <script src="/java/Theme-Swither.js"></script>
+    <script src="/java/interactive-gallery.js"></script>
 
 
     
