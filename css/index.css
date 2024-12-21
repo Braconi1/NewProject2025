@@ -224,6 +224,7 @@ body.dark .hero-section {
   color: var(--text-color);
   font-size: var(--font-size-l);
   cursor: pointer;
+  padding: 20px;
 }
 
 .theme-switcher:focus {
@@ -245,6 +246,18 @@ body.dark .hero-section {
 
 
 /* About us */
+
+#view {
+  color: var(--background-color);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+body.dark #view {
+  color: var(--testimonials-background-light);
+}
 
 .about-section {
   padding: 100px 0;
@@ -653,6 +666,114 @@ body.dark .inner h1 {
   margin-bottom: 20px;
 }
 
+/* Mapa - Weather Api */
+
+.api {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.weather-api {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 48%;
+}
+
+.weather-api h1 {
+  color: var(--background-color);
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.weather-api label {
+  color: var(--accordion-background-dark);
+  font-size: 18px;
+}
+
+.weather-api input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid var(--background-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.weather-api button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--background-color); 
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.weather-api button:hover {
+  background-color: var(--color-toggle-sun);
+}
+
+.weather-api #weatherResult {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--color-white);
+  border: 1px solid var(--background-color); 
+  border-radius: 5px;
+}
+
+.google-maps {
+  background-color: var(--background-color); 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 48%;
+}
+
+.mapa-h1 {
+  color: var(--color-white);
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mapa {
+  border-radius: 10px;
+  width: 100%;
+}
+
+body.dark .weather-api button {
+  color: #B24592;
+}
+
+body.dark .weather-api label {
+  color: #B24592;
+}
+
+body.dark .weather-api h1 {
+  color: var(--color-toggle-sun);
+}
+
+body.dark .weather-api {
+  color: #2D2D2D;
+}
+
+body.dark .api {
+  color: #5a5a5a;
+}
+
+body.dark .google-maps {
+  color: #2d2d2d;
+}
+
+body.dark .mapa-h1{
+  color: var(--about-background-light);
+}
+
 @media(max-width: 450px) {
   .links-container{
     flex-direction: column;
@@ -760,6 +881,27 @@ body.dark .inner h1 {
   .faq-list {
     gap: 5px; 
   }
+
+  .weather-api, .google-maps {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .weather-api h1, .mapa-h1 {
+    font-size: 22px;
+  }
+
+  .weather-api label, .weather-api input, .weather-api button {
+    font-size: 14px;
+  }
+
+  .weather-api input {
+    padding: 8px;
+  }
+
+  .weather-api button {
+    padding: 10px;
+  }
 }
 
 /* Mobiteli */
@@ -854,5 +996,16 @@ body.dark .inner h1 {
   .col {
     flex: 100%;
     max-width: 80%;
+  }
+
+  .api {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .weather-api, .google-maps {
+      width: 90%;
+      margin-bottom: 20px;
   }
 }

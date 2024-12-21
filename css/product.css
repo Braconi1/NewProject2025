@@ -177,6 +177,7 @@ nav svg {
   color: var(--text-color);
   font-size: var(--font-size-l);
   cursor: pointer;
+  padding: 20px;
 }
 
 .theme-switcher:focus {
