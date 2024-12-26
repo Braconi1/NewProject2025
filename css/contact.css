@@ -9,6 +9,11 @@
     --hero-background-dark: #333;
     --about-background-light: #ffffff; 
     --about-background-dark: #333;
+
+    /* Theme-swithcer css */
+    --text-color: #fff;  
+    --font-size-l: 20px;
+    --color-toggle-sun: #fd76ff;
   
     /* Fonts */
   
@@ -117,17 +122,27 @@ body.dark {
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: var(--font-size-l);
     cursor: pointer;
   }
+
+  /* Theme-Swithcer*/
   
-  
-  .theme-switcher i {
-    font-size: var(--font-size-l); 
+  .theme-switcher:focus {
+    outline: none;
   }
   
   .theme-switcher:focus {
     outline: none;
+  }
+  
+  .theme-switcher i {
+    font-size: 24px;
+    transition: transform 0.3s;
+  }
+  
+  .theme-switcher:hover {
+    color: var(--color-toggle-sun);
   }
 
   body.dark {

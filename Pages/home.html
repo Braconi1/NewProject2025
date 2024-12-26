@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="icon" type="image/png" href="/images/R.png">
+
+    <!--Notification-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 </head>
 <body>
 
@@ -17,7 +23,8 @@
         <nav>
             <!--THEME-SWITCHER-->
             <button onclick="toggleTheme()" class="theme-switcher">
-                <i class="bi bi-moon"></i> 
+                <i class="bi bi-moon" id="moon-icon"></i> 
+                <i class="bi bi-sun" id="sun-icon" style="display:none;"></i>
             </button>
 
             <input type="checkbox" id="sidebar-active">
@@ -38,6 +45,9 @@
                 <a href="/Pages/products.html">Discover</a>
                 <a href="/Pages/signup.html">Login</a>
                 <a href="/Pages/contact.html">Contact & Support</a>
+
+                <!--Admin Control Edit/delete-->
+                <a href="/Pages/admin-panel.html">Admin</a>
             </div>
         </nav>
     </header>
@@ -81,7 +91,12 @@
                         Founded in 1992, The Perfume Shop set out with the simple idea of making luxury perfume brands accessible to everyone at an affordable price. With the first store openings in Birmingham, Belfast & Milton Keynes, The Perfume Shop developed a genuine passion for delighting customers with expert perfume knowledge and the highest customer service standards which remain at the forefront of everything the brand stands for today.
                         In 2005 The Perfume Shop was acquired by the world's largest international health and beauty retailer AS Watson - operating over 16,300 stores in 28 markets. 
                         Find out more about our parent company.
+                        <span id="more" style="display:none;"> Find out more about our parent company and our commitment to offering the best products. We believe in providing an excellent shopping experience with a wide range of perfumes from both well-known and niche brands.</span>
                     </p>
+                    
+                    <!--View-More-->
+
+                    <button id="view">View More</button>
                     <div class="social-link-list">
                         <a href="https://www.facebook.com" class="social-link" target="_blank"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a>
@@ -135,124 +150,79 @@
 
         <div class="testimonials">
             <div class="inner">
-                <h1>Customer FeedBack</h1>
+                <h1>Customer Feedback</h1>
                 <div class="border"></div>
-
-                <div class="row">
-                    <div class="col">
-                        <div class="testimonial">
-                            <img src="/images/johny.jpg" alt="image">
-                            <div class="name">Carlos Hernandez</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <p>I’m really pleased with my order! The perfumes are authentic, and the packaging was lovely. My only small suggestion would be to add more detailed scent descriptions on the website. Overall, though, a great experience and I’d definitely shop here again!</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="testimonial">
-                            <img src="/images/amela.jpg" alt="image">
-                            <div class="name">Emma Olivia</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-
-                            <p>Absolutely perfect shopping experience! The variety of perfumes is fantastic, and the descriptions helped me find exactly what I wanted. My order arrived quickly, beautifully packaged, and the scents are divine. I’ll be a returning customer for sure!</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="testimonial">
-                            <img src="/images/jermy.jpg" alt="image">
-                            <div class="name">Jermy Nguyen</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <p>Great selection and fast shipping! The perfumes arrived in good condition, and the scents are amazing. The only issue I had was with the website navigation – it took me a bit longer to find what I was looking for. Other than that, very happy with my purchase!</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="row" id="row"></div>
             </div>
         </div>
 
         <!--FAQ-->
 
         <div class="faq-section">
-            <p>FAQ</p>
-            <h3>Frequently Asked Questions</h3>
-        
-            <div class="faq">
-                <input type="checkbox" id="faq1" class="faq-toggle">
-                <label for="faq1" class="accordion">
-                    What is Perfume?
-                    <i class="bi bi-caret-down-fill"></i>
-                </label>
-                <div class="pannel">
-                    <p>
-                        Perfume is a mixture of fragrant essential oils or aroma compounds (fragrances), fixatives, and solvents, usually in liquid form, used to give the human body, animals, food, objects, and living spaces an agreeable scent.
-                    </p>
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-list">
+                <div class="faq">
+                    <div class="quest">
+                        <p>What is Perfume?</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="ans">
+                        <p>Perfume is a mixture of fragrant essential oils or aroma compounds (fragrances), fixatives, and solvents, usually in liquid form, used to give the human body, animals, food, objects, and living spaces an agreeable scent.</p>
+                    </div>
+                </div>
+    
+                <div class="faq">
+                    <div class="quest">
+                        <p>How to use Perfume?</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="ans">
+                        <p>Apply the scent to your inner elbows, wrists, and knees. Dab cologne or perfume near your collarbone and on your neck. Try putting the scent on your belly button or behind your ears. Apply the scent 5 to 7 inches (13 to 18 cm) away from your skin.</p>
+                    </div>
+                </div>
+    
+                <div class="faq">
+                    <div class="quest">
+                        <p>How does Shipping work?</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="ans">
+                        <p>The three stages of the shipping process consist of receiving, processing, and fulfilling an order. These stages impact how quickly and accurately you can prepare a customer order and have it shipped directly to its end destination.</p>
+                    </div>
+                </div>
+    
+                <div class="faq">
+                    <div class="quest">
+                        <p>How can I reset my account password if I forgot it?</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="ans">
+                        <p>
+                            If you've forgotten your password, you can easily reset it by following these steps:
+    
+                        Go to the login page and click on the "Forgot Password?" link.
+                        Enter the email address associated with your account and submit.</p>
+                    </div>
                 </div>
             </div>
-        
-            <div class="faq">
-                <input type="checkbox" id="faq2" class="faq-toggle">
-                <label for="faq2" class="accordion">
-                    How to use Perfume?
-                    <i class="bi bi-caret-down-fill"></i>
-                </label>
-                <div class="pannel">
-                    <p>
-                        Apply the scent to your inner elbows, wrists, and knees. Dab cologne or perfume near your collarbone and on your neck. Try putting the scent on your belly button or behind your ears. Apply the scent 5 to 7 inches (13 to 18 cm) away from your skin.
-                    </p>
-                </div>
-            </div>
-        
-            <div class="faq">
-                <input type="checkbox" id="faq3" class="faq-toggle">
-                <label for="faq3" class="accordion">
-                    How does Shipping work?
-                    <i class="bi bi-caret-down-fill"></i>
-                </label>
-                <div class="pannel">
-                    <p>
-                        The three stages of the shipping process consist of receiving, processing, and fulfilling an order. These stages impact how quickly and accurately you can prepare a customer order and have it shipped directly to its end destination.
-                    </p>
-                </div>
+        </div>
+
+        <div class="api">
+            <div class="weather-api">
+                <h1>Weather Information</h1>
+                <label for="city">Enter City:</label>
+                <input type="text" id="city" placeholder="e.g., London">
+                
+                <button onclick="WeatherApi()">Get Weather</button>
+                
+                <div id="weatherResult"></div>
             </div>
 
-            <div class="faq">
-                <input type="checkbox" id="faq4" class="faq-toggle">
-                <label for="faq4" class="accordion">
-                    How can I reset my account password if I forgot it?
-                    <i class="bi bi-caret-down-fill"></i>
-                </label>
-                <div class="pannel">
-                    <p>
-                        If you've forgotten your password, you can easily reset it by following these steps:
-
-                    <p>Go to the login page and click on the "Forgot Password?" link.</p>
-                    <p>Enter the email address associated with your account and submit.</p>
-                    <p>Check your email for a password reset link. If you don't see it within a few minutes, check your spam or junk folder.</p>
-                    <p>Click the link in the email and follow the instructions to set a new password.</p>
-                    </p>
-                </div>
+            <div class="google-maps">
+                <h1 class="mapa-h1">Where you can find us?</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.341299989665!2d18.309495076049675!3d43.81862807109471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca0f99d6bf3b%3A0x6f97362d8c61c461!2sInternational%20Burch%20University!5e1!3m2!1sen!2sba!4v1734816479195!5m2!1sen!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </div>      
+        </div>     
     </main>
 
     <footer>
@@ -321,7 +291,11 @@
     </footer>
 
     <script src="/java/Theme-Swither.js"></script>
+    <script src="/java/faq.js"></script>
+    <script src="/java/view-more.js"></script>
+    <script src="/java/weather-api.js"></script>
 
+    <script src="/java/data-loader.js"></script>
     <!--CONTENT-->
     
 </body>

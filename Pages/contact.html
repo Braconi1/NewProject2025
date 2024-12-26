@@ -20,7 +20,8 @@
         <nav>
             <!--THEME-SWITCHER-->
             <button onclick="toggleTheme()" class="theme-switcher">
-                <i class="bi bi-moon"></i> 
+                <i class="bi bi-moon" id="moon-icon"></i> 
+                <i class="bi bi-sun" id="sun-icon" style="display:none;"></i>
             </button>
 
             <input type="checkbox" id="sidebar-active">
@@ -40,6 +41,9 @@
                 <a href="/Pages/products.html">Discover</a>
                 <a href="/Pages/signup.html">Login</a>
                 <a href="/Pages/contact.html">Contact & Support</a>
+
+                <!--Admin Control Edit/delete-->
+                <a href="/Pages/admin-panel.html">Admin</a>
             </div>
         </nav>
     </header>

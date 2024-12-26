@@ -5,6 +5,11 @@
     --primary-color: #6a3093;
     --color-white: #f0f0f0;
     --color-text: #B24592;
+
+    /* Theme-swithcer css */
+    --text-color: #fff;  
+    --font-size-l: 20px;
+    --color-toggle-sun: #fd76ff;
     }
   
 * {
