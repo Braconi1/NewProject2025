@@ -1,6 +1,6 @@
 # Project 
 
-Project: Aventus Perfumery (Assigment 2)
+Project: Aventus Perfumery (Assigment 3)
 
 Introduction
 
