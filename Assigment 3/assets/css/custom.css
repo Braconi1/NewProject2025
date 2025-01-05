@@ -49,12 +49,57 @@ table {
 html { line-height: 1.5; font-family: sans-serif; font-weight: normal; color: rgba(0,0,0,0.87); }
 body { margin:0; }
 
-nav { height:50px; line-height:50px; background:#00acc1; position:fixed; top:0; left:0; width:100%; }
-nav ul li { display:block; float:left; width:33.33%; text-align:center; }
-nav ul li a { color:#fff; text-decoration:none; }
 
-main#spapp > section { padding:60px 10px 10px 10px; background:#ffcdd2; }  
+nav {
+  background-color: #6a1b9a;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main#spapp > section { padding:60px 10px 10px 10px; background:#fff; }  
 main#spapp > section#view_2 { background:#90caf9; }  
 main#spapp > section#view_3 { background:#a5d6a7; } 
 main#spapp > section#error_404 { background:#b71c1c; color:#fff; }
 main#spapp h1 { font-size: 4.2rem; line-height: 110%; margin: 2.1rem 0 1.68rem 0; text-align:center; }
+
+
+footer {
+  background-color: #6a1b9a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
