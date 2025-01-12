@@ -49,7 +49,7 @@ emailto(amela.vatres@stu.ibu.edu.ba) in footer was implemented also.
 
 Lists, products list, table, product table, about us, faq, customers feedback(Image of Amela Vatres -> Approved by her)
 
-<--!--> All requirment is done, except Data-Driven-Content (I didnt know how to make it :/) <--!-->
+<--!--> All requirment are done<--!-->
 ________________________________________________________________________________________________________________________________________
 
 

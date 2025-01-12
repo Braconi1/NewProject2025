@@ -47,8 +47,8 @@
     </section>
 
     <footer>
-        <h1>Elvir Pandur IT </h1>
-        <address>Contact: <a href="mailto:me@example.com">Mail me</a></address>
+        <h1 id="footer-name">Elvir Pandur IT </h1>
+        <address>Contact: <a href="mailto:amela.vatres@ibu.edu.ba">Mail Proffesor</a></address>
     </footer>
 
 
@@ -61,6 +61,15 @@
 
 
         app.run();
+
+        /* Provjerava local storage da li je korisnik prijavljen ako nije kad refresha page da ga prebaci na login page(#page4)*/
+
+        const TestingLocal = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!TestingLocal) {
+            
+            window.location.href = '#page4';
+        }
     </script>
 </body>
 

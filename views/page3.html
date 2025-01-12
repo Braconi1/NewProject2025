@@ -1,0 +1,33 @@
+<div class="about-container">
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <main>
+        <section class="about-section">
+            <div class="about-item">
+                <img src="/assets/images/jermy.jpg" alt="Our Story">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, we aim to provide premium perfumes that suit every individual's unique style.</p>
+            </div>
+            <div class="about-item">
+                <img src="/assets/images/johny.jpg" alt="Our Vision">
+                <h2>Our Vision</h2>
+                <p>To create a diverse range of fragrances that capture emotions and memories, delivering luxury in every bottle.</p>
+            </div>
+            <div class="about-item">
+                <img src="/assets/images/R.png" alt="Our Values">
+                <h2>Our Values</h2>
+                <p>Quality, innovation, and sustainability drive our mission to bring high-end perfumes to everyone.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const TestingLocal = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!TestingLocal) {
+            
+            window.location.href = '#page4';
+        }
+    </script>
+</div>

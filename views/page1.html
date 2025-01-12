@@ -1,0 +1,33 @@
+<div class="container" >
+    <h1 style="text-align: center;">Perfume Store</h1>
+
+    <article>
+        <h2>Revlone Store</h2>
+        <p>Our perfumes are crafted from premium ingredients, ensuring a long-lasting and luxurious scent that stays with you throughout the day. Each fragrance is carefully blended to provide an unforgettable olfactory experience</p>
+    </article>
+    <article>
+        <h2>Unique and Versatile Scents</h2>
+        <p>We offer a diverse range of fragrances, from fresh and floral to warm and woody, catering to every personality and occasion. Whether you want to feel confident at work, romantic on a date, or relaxed on a casual day, we have the perfect scent for you</p>
+    </article>
+    <article>
+        <h2>Enhance Your Confidence</h2>
+        <p>The right perfume is more than just a scent—its an extension of your personality. A carefully chosen fragrance can elevate your mood, enhance your confidence, and leave a lasting impression on those around you</p>
+    </article>
+    <article>
+        <h2>Affordable Luxury</h2>
+        <p>Indulge in high-end fragrances without breaking the bank. Our perfumes offer the perfect balance between luxury and affordability, making premium scents accessible to everyone.
+        </p>
+    </article>
+
+    <script>
+
+        /* Provjerava local storage da li je korisnik prijavljen ako nije kad refresha page da ga prebaci na login page(#page4)*/
+        
+        const TestingLocal = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!TestingLocal) {
+            
+            window.location.href = '#page4';
+        }
+    </script>
+</div>
