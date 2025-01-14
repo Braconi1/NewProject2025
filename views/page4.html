@@ -1,0 +1,55 @@
+<!--Pokusao sam ovaj css ubaciti u custom.css ali iz nekog razloga ne radi, pa sam ga ubacio kao inline css-->
+
+<section id="page4" data-load="page4.html" style="padding: 20px; background-color: #f9f9f9; text-align: center; font-family: Arial, sans-serif;">
+    <h1 style="font-size: 32px; margin-bottom: 20px; color: #333;">Login</h1>
+    <form id="loginForm" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <input type="text" id="username" placeholder="Enter your username" required 
+            style="width: 300px; padding: 10px; font-size: 16px; border: 1px solid #e7e4e4; border-radius: 5px;">
+        <input type="password" id="password" placeholder="Enter your password" required 
+            style="width: 300px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+        <button type="submit" style="width: 150px; padding: 10px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Login
+        </button>
+    </form>
+
+    <button id="logoutButton" style="margin-top: 20px; width: 150px; padding: 10px; font-size: 16px; background-color: #dc3545; color: rgb(255, 255, 255); border: none; border-radius: 5px; cursor: pointer;">
+        Logout
+    </button>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('./assets/json/users.json')
+                .then(response => response.json())   /*Promise funkcija radi kao i i obicna funkcija */
+                .then(users => {
+                    const user = users.find(u => u.username === username && u.password === password);
+
+                    if (user) {
+                        localStorage.setItem('loggedInUser', JSON.stringify(user));
+                        alert(`Welcome, ${username}!`);
+                        window.location.hash = '#page1'; 
+                    } else {
+                        alert('Invalid username or password');
+                        loginForm.reset();
+                    }
+                })
+                .catch(console.error)
+        });
+
+        /* logout-local-storage reset*/
+
+        document.getElementById('logoutButton').addEventListener('click', function () {
+
+        localStorage.clear();
+
+        alert('You have been logged out.');
+        window.location.href = '#page4';
+        loginForm.reset();
+
+        });
+    </script>
+</section>
