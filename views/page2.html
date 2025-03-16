@@ -1,0 +1,61 @@
+<div class="shop-container">
+    <header>
+        <h1>Perfume Shop</h1>
+    </header>
+    <main>
+        <section class="products">
+            <div class="product">
+                <img src="/assets/images/armani code new.jpg" alt="Perfume 1">
+                <h2>Armani Code old</h2>
+                <p>$250</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/armani code.jpg" alt="Perfume 2">
+                <h2>Armani Code</h2>
+                <p>$365</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/eros.jpg" alt="Perfume 3">
+                <h2>Eros Flame Perfume</h2>
+                <p>$95</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/jazz.jpg" alt="Perfume 4">
+                <h2>Jazz Club</h2>
+                <p>$270</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/dolce gabana.jpg" alt="Perfume 5">
+                <h2>Dolce Gabanna</h2>
+                <p>$70</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/jean-paul.jpg" alt="Perfume 6">
+                <h2>Jean Paul </h2>
+                <p>$170</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/JEAN_PAUL_GAULTIER_LE_PARFUM_125_ML.jpg" alt="Perfume 7">
+                <h2>Jean Paul Le Perfume</h2>
+                <p>$190</p>
+            </div>
+            <div class="product">
+                <img src="/assets/images/jpg women 3.jpg" alt="Perfume 8">
+                <h2>Jean Paul Women</h2>
+                <p>$160</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        /* Provjerava local storage da li je korisnik prijavljen ako nije kad refresha page da ga prebaci na login page(#page4)*/
+        
+        const TestingLocal = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!TestingLocal) {
+            
+            window.location.href = 'page4';
+        }
+    </script>
+</div>
